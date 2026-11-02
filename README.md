@@ -78,6 +78,57 @@ Licensed under CC-BY-4.0. Browse the hierarchy through GitHub's folder navigatio
 
 ## Quick Start
 
+### Composer / PHP
+
+Untuk memakai salinan lokal ini dari project PHP lain, tambahkan path repository:
+
+```bash
+composer config repositories.indonesia path "E:/fahmi/project-coba"
+composer require fahmicsa/indonesian-area:@dev
+```
+
+Untuk mengambil langsung dari repository GitHub sebelum masuk Packagist:
+
+```bash
+composer config repositories.indonesian-area vcs https://github.com/FahmiCsa/indonesian_area
+composer require fahmicsa/indonesian-area:dev-main
+```
+
+Setelah package dipublikasikan melalui Packagist, cukup jalankan:
+
+```bash
+composer require fahmicsa/indonesian-area
+```
+
+Gunakan data langsung dari PHP tanpa menjalankan API:
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use FahmiCsa\IndonesianArea\AdministrativeDivisions;
+
+$indonesia = new AdministrativeDivisions();
+
+// Mencari kabupaten dan kota dengan nama Bandung.
+$bandung = $indonesia->searchRegencies('Bandung');
+
+foreach ($bandung as $division) {
+    echo $division['id'] . ' - ' . $division['name']['local'] . PHP_EOL;
+}
+```
+
+Contoh penggunaan lainnya:
+
+```php
+$provinces = $indonesia->provinces();
+$westJavaCities = $indonesia->cities(provinceId: '32');
+$bandungCity = $indonesia->findRegency('3273');
+$districts = $indonesia->districts(regencyId: '3273');
+$villages = $indonesia->villages(districtId: '3273010');
+```
+
 ### Python
 
 ```python

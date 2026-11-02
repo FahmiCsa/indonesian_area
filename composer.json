@@ -1,0 +1,26 @@
+{
+  "name": "fahmicsa/indonesian-area",
+  "description": "Dataset dan library PHP untuk wilayah administratif Indonesia.",
+  "type": "library",
+  "license": "CC-BY-4.0",
+  "homepage": "https://github.com/FahmiCsa/indonesian_area",
+  "keywords": [
+    "indonesia",
+    "province",
+    "regency",
+    "city",
+    "district",
+    "village"
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "FahmiCsa\\IndonesianArea\\": "src/"
+    }
+  },
+  "support": {
+    "source": "https://github.com/FahmiCsa/indonesian_area"
+  }
+}
