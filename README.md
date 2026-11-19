@@ -8,7 +8,7 @@ Licensed under CC-BY-4.0. Browse the hierarchy through GitHub's folder navigatio
 
 | Item | Details |
 |------|---------|
-| Province | 34 |
+| Province | 38 (via PHP API) |
 | Regency/City | 514 |
 | District | 7,215 |
 | Village | 80,534 |
@@ -22,6 +22,12 @@ Licensed under CC-BY-4.0. Browse the hierarchy through GitHub's folder navigatio
 | Flag | [PNG](https://onlygames.me/flags-png/id/) · [CDN](https://www.freeflags.org/cdn/) · [CSS](https://www.freeflags.org/css/) · [Collections](https://www.freeflags.org/collections/) |
 | National Anthem | [🎵 Listen & Download Indonesia National Anthem MP3](https://onlygames.me/national-anthems/id/) |
 | Statistics | [GDP](https://nationdata.org/gdp/country/idn) · [Population](https://nationdata.org/population/country/idn) — via [NationData.org](https://nationdata.org) |
+
+> **Catatan struktur Papua:** berkas sumber historis masih tersusun dalam 34
+> provinsi. `AdministrativeDivisions` menormalkan struktur tersebut saat
+> dijalankan menjadi 38 provinsi, termasuk Papua Barat Daya, Papua Selatan,
+> Papua Tengah, dan Papua Pegunungan, sesuai kode wilayah Kemendagri/BPS.
+> Gunakan API PHP untuk hasil dengan struktur provinsi terkini.
 
 ## Browse by Province
 
@@ -66,7 +72,7 @@ Licensed under CC-BY-4.0. Browse the hierarchy through GitHub's folder navigatio
 
 | File | Format | Description |
 |------|--------|-------------|
-| [all-province.json](data/all-province.json) | JSON | All 34 province records |
+| [all-province.json](data/all-province.json) | JSON | 34 source records; PHP API exposes 38 current records |
 | [all-regency.json](data/all-regency.json) | JSON | All 514 regency/city records |
 | [all-district.json](data/all-district.json) | JSON | All 7,215 district records |
 | [village-by-province/](data/village-by-province/) | JSON | 80,534 villages split by province |
